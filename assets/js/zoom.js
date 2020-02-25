@@ -6,6 +6,7 @@ const zoomInBtn = document.querySelector('.zoomIn');
 const zoomOutBtn = document.querySelector('.zoomOut');
 
 let zoomLevel = 1;
+const maxZoomLevel = 4;
 
 const toggleFrameHandler = function () {
     if(catImage.classList.contains('imageFrame')){
@@ -17,8 +18,8 @@ const toggleFrameHandler = function () {
 
 const zoomInBtnHandler = function () {
     zoomLevel++;
-    if(zoomLevel < 4){
-        catImage.width *= zoomLevel; 
+    if(zoomLevel < maxZoomLevel){
+        catImage.width = catImage.naturalWidth * zoomLevel; 
     } else {
         zoomLevel--;
     }
@@ -27,8 +28,7 @@ const zoomInBtnHandler = function () {
 
 const zoomOutBtnHandler = function () {
     if(catImage.width>catImage.naturalWidth){
-        //catImage.width = catImage.width - (catImage.width - catImage.naturalWidth)
-        catImage.width = catImage.width / zoomLevel;
+        catImage.width = catImage.width - catImage.naturalWidth;
         zoomLevel--;
     }
 }
