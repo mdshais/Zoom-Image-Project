@@ -9,11 +9,7 @@ let zoomLevel = 1;
 const maxZoomLevel = 4;
 
 const toggleFrameHandler = function () {
-    if(catImage.classList.contains('imageFrame')){
-        catImage.classList.remove('imageFrame')
-    } else {
-        catImage.classList.add('imageFrame')
-    }
+    catImage.classList.toggle('imageFrame');
 }
 
 const zoomInBtnHandler = function () {
